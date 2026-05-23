@@ -12,7 +12,7 @@ export const Header = () => {
                 </div>
             </header>
 
-            <Image className={styles.earthPanelImage} src="/earth.jpg" alt="" width={304} height={436} />
+            <Image className={styles.earthPanelImage} src="/earth.jpg" alt="" width={367} height={436} />
         </>
     );
 };

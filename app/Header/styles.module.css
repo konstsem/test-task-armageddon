@@ -28,7 +28,7 @@
   grid-area: earthLogo;
   justify-self: start;
   pointer-events: none;
-  /* transform: translateX(-19%);  TODO пересмотреть после замены изображения*/
+  transform: translateX(-73px);
 }
 
 @media(max-width: 768px) {
