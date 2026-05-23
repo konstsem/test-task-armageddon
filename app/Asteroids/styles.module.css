@@ -1,0 +1,54 @@
+.asteroidsMain {
+  grid-area: main;
+  min-height: 0;        /* обязательно для скролла в grid */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-top: 132px;
+  padding-right: 0.5rem;   /* место под скроллбар */
+}
+
+.asteroidsMainHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.asteroidsMainTitle {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.unitSwitcher {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.unitSwitcherBtn {
+  color: var(--foreground);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.unitSwitcherBtn[aria-pressed="true"] {
+  font-weight: 700;
+  cursor: default;
+}
+
+.unitSwitcherBtn[aria-pressed="false"] {
+  text-decoration: underline;
+}
+
+@media(max-width: 768px) {
+  .asteroidsMain {
+    position: relative;
+    left: 65px; /* TODO пересмотреть после замены изображения*/
+  }
+}

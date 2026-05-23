@@ -1,0 +1,40 @@
+.appHeader {
+  grid-area: header;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 15px;
+}
+
+.appHeaderTitle {
+  font-family: var(--font-passion-one), Helvetica, sans-serif;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--title);
+  letter-spacing: 0;
+}
+
+.appHeaderCompany,
+.appHeaderTagline {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.earthPanelImage {
+  grid-area: earthLogo;
+  justify-self: start;
+  pointer-events: none;
+  /* transform: translateX(-19%);  TODO пересмотреть после замены изображения*/
+}
+
+@media(max-width: 768px) {
+  .earthPanelImage {
+    position: fixed;
+    top: 123px;
+    left: -265px; /* TODO пересмотреть после замены изображения*/
+  }
+}
