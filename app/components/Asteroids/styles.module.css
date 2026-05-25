@@ -46,9 +46,22 @@
   text-decoration: underline;
 }
 
+.footer {
+  display: none;
+}
+
 @media(max-width: 768px) {
   .asteroidsMain {
+    padding-top: 0;
     position: relative;
     left: 65px; /* TODO пересмотреть после замены изображения*/
+  }
+
+  .footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 16px;
   }
 }

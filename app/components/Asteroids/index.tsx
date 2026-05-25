@@ -1,6 +1,23 @@
+import { useEffect } from "react";
+import { useAppStore } from "@/app/store/AppStoreProvider";
 import styles from "./styles.module.css";
+import { loadItems } from "../../services/apiNasa";
+import { normalizeItems } from "../../utils/normalizeItems";
 
 export const Asteroids = () => {
+    const store = useAppStore();
+    useEffect(() => {
+        (async () => {
+            try {
+                const data = await loadItems();
+                const normalized = normalizeItems(data);
+                store.addItems(normalized);
+            } catch (e) {
+                console.error(e);
+            }
+        })();
+    });
+
     return (
         <main className={styles.asteroidsMain} id="main-content">
             <header className={styles.asteroidsMainHeader}>
@@ -18,6 +35,7 @@ export const Asteroids = () => {
             </header>
 
             <div style={{ paddingTop: "16px" }}>Asteroid list</div>
+            <footer className={styles.footer}>© Все права и планета защищены</footer>
         </main>
     );
 };
