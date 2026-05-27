@@ -1,11 +1,16 @@
-import { FC, createContext, PropsWithChildren, useContext } from "react";
-import { useLocalObservable } from "mobx-react-lite";
-import { createAppStore, AppStore } from "./createAppStore";
+"use client";
+import { FC, createContext, PropsWithChildren, useContext, useState } from "react";
+import { createAppStore } from "./createAppStore";
+import type { AppStore, AppState } from "./createAppStore";
+
+type AppStoreProviderProps = PropsWithChildren<{
+    initialState: AppState;
+}>;
 
 const AppContext = createContext<AppStore | null>(null);
 
-export const AppStoreProvider: FC<PropsWithChildren> = ({ children }) => {
-    const store = useLocalObservable(() => createAppStore());
+export const AppStoreProvider: FC<AppStoreProviderProps> = ({ children, initialState }) => {
+    const [store] = useState(() => createAppStore(initialState));
     return <AppContext.Provider value={store}>{children}</AppContext.Provider>;
 };
 
