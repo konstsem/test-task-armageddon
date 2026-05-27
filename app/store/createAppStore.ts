@@ -2,7 +2,10 @@ import { makeAutoObservable } from "mobx";
 import { AsteroidItem } from "../types";
 
 export type AppState = {
-    items: AsteroidItem[];
+    items: {
+        byId: Record<string, AsteroidItem>;
+        allIds: string[];
+    };
 };
 
 export type AppStore = AppState & {
@@ -14,7 +17,10 @@ export const createAppStore = (initialState: AppState) => {
         items: initialState.items,
 
         addItems(newItems: AsteroidItem[]) {
-            this.items.push(...newItems);
+            newItems.forEach((item) => {
+                this.items.byId[item.id] = item;
+            });
+            this.items.allIds.push(...newItems.map((item) => item.id));
         },
     });
 };

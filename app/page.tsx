@@ -1,5 +1,5 @@
 import { AppStoreProvider } from "./store/AppStoreProvider";
-import { Asteroids } from "./components/Asteroids";
+import { AsteroidList } from "./components/AsteroidList";
 import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
 import { getNormalizedList } from "./utils/getNormalizedList";
@@ -14,7 +14,7 @@ export default async function Home() {
         <div className="app">
             <Header />
             <AppStoreProvider initialState={{ items }}>
-                <Asteroids />
+                <AsteroidList />
                 <Cart />
             </AppStoreProvider>
         </div>

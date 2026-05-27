@@ -1,17 +1,22 @@
 import { apiNasaAsteroidDto, AsteroidItem, apiNasaAsteroidsByDateDto } from "../types";
 
-export const getNormalizedList = (elementsByDate: apiNasaAsteroidsByDateDto): AsteroidItem[] => {
+export const getNormalizedList = (
+    elementsByDate: apiNasaAsteroidsByDateDto
+): { byId: Record<string, AsteroidItem>; allIds: string[] } => {
     if (!elementsByDate) {
-        return [];
+        return { byId: {}, allIds: [] };
     }
 
     try {
+        const byId: Record<string, AsteroidItem> = {};
+        const allIds: string[] = [];
+
         const items: (apiNasaAsteroidDto & { data: string })[] = Object.entries(elementsByDate)
             .sort(([aDate], [bDate]) => aDate.localeCompare(bDate))
             .map(([data, items]) => items.map((item) => ({ ...item, data })))
             .flat();
 
-        const normalizedList = items.map((item) => {
+        items.forEach((item) => {
             const {
                 estimated_diameter: {
                     meters: { estimated_diameter_max, estimated_diameter_min },
@@ -26,7 +31,7 @@ export const getNormalizedList = (elementsByDate: apiNasaAsteroidsByDateDto): As
                 miss_distance: { kilometers: distanceInKilometers, lunar: distanceInLunar },
             } = close_approach_data;
 
-            return {
+            byId[item.id] = {
                 id: item.id,
                 name: item.name,
                 close_approach_date,
@@ -37,8 +42,9 @@ export const getNormalizedList = (elementsByDate: apiNasaAsteroidsByDateDto): As
                 diameter: (estimated_diameter_max + estimated_diameter_min) / 2,
                 is_potentially_hazardous_asteroid,
             };
+            allIds.push(item.id);
         });
-        return normalizedList;
+        return { byId, allIds };
     } catch {
         throw new Error("Data normalizated error.");
     }

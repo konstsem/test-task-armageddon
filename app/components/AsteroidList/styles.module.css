@@ -30,7 +30,7 @@
 }
 
 .unitSwitcherBtn {
-  color: var(--foreground);
+  color: var(--white);
   background: none;
   border: none;
   cursor: pointer;
@@ -48,6 +48,12 @@
 
 .footer {
   display: none;
+}
+
+.asteroidList {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 @media(max-width: 768px) {

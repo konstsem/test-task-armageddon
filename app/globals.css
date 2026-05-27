@@ -1,8 +1,10 @@
 :root {
   --background: #000;
   --foreground: #FFF;
-  --title: #ff6b00;
-  --bg-cart: #1c1c1c;
+  --white: #FFF;
+  --orange: #ff6b00;
+  --orange-light: rgb(248 102 0 / 0.15);
+  --btn-color: #F5DED9
 }
 
 body {

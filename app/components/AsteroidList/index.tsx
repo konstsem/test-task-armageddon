@@ -1,10 +1,12 @@
 "use client";
-import { observer } from "mobx-react-lite";
-// import { useAppStore } from "@/app/store/AppStoreProvider";
 import styles from "./styles.module.css";
+import { AsteroidCard } from "../Asteroid";
+import { useAppStore } from "@/app/store/AppStoreProvider";
 
-export const Asteroids = observer(() => {
-    // const store = useAppStore();
+export const AsteroidList = () => {
+    const {
+        items: { allIds },
+    } = useAppStore();
 
     return (
         <main className={styles.asteroidsMain} id="main-content">
@@ -22,8 +24,12 @@ export const Asteroids = observer(() => {
                 </div>
             </header>
 
-            <div style={{ paddingTop: "16px" }}>Asteroid list</div>
+            <ul className={styles.asteroidList}>
+                {allIds.map((id) => (
+                    <AsteroidCard key={id} itemId={id} />
+                ))}
+            </ul>
             <footer className={styles.footer}>© Все права и планета защищены</footer>
         </main>
     );
-});
+};
