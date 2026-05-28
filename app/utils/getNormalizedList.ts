@@ -1,4 +1,4 @@
-import { apiNasaAsteroidDto, AsteroidItem, apiNasaAsteroidsByDateDto } from "../types";
+import { AsteroidItem, apiNasaAsteroidDto, apiNasaAsteroidsByDateDto } from "../types";
 
 export const getNormalizedList = (
     elementsByDate: apiNasaAsteroidsByDateDto

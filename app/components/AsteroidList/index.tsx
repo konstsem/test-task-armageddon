@@ -1,8 +1,10 @@
 "use client";
 import { observer } from "mobx-react-lite";
-import styles from "./styles.module.css";
-import { AsteroidCard } from "../Asteroid";
+
 import { useAppStore } from "@/app/store/AppStoreProvider";
+
+import { AsteroidCard } from "../Asteroid";
+import styles from "./styles.module.css";
 
 export const AsteroidList = observer(() => {
     const store = useAppStore();
@@ -22,7 +24,11 @@ export const AsteroidList = observer(() => {
             <header className={styles.asteroidsMainHeader}>
                 <h2 className={styles.asteroidsMainTitle}>Ближайшие подлёты астероидов</h2>
 
-                <div className={styles.unitSwitcher} role="group" aria-label="Единицы измерения расстояния">
+                <div
+                    className={styles.unitSwitcher}
+                    role="group"
+                    aria-label="Единицы измерения расстояния"
+                >
                     <button
                         type="button"
                         className={styles.unitSwitcherBtn}

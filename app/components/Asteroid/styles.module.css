@@ -23,24 +23,24 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-  }
+}
 
-  .asteroidCardDistanceValue {
+.asteroidCardDistanceValue {
     font-size: 16px;
     line-height: 24px;
     white-space: nowrap;
-  }
-  
-  .asteroidCardDistanceLine {
+}
+
+.asteroidCardDistanceLine {
     position: relative;
     width: 100%;
     height: 1px;
     background: var(--white);
     transform: translateY(-0.25rem);
-  }
+}
 
-  .asteroidCardDistanceLine::before,
-  .asteroidCardDistanceLine::after {
+.asteroidCardDistanceLine::before,
+.asteroidCardDistanceLine::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -49,22 +49,22 @@
     transform: translateY(-50%);
     border-top: 0.25rem solid transparent;
     border-bottom: 0.25rem solid transparent;
-  }
+}
 
-  .asteroidCardDistanceLine::before {
+.asteroidCardDistanceLine::before {
     left: -1px;
     border-right: 6px solid var(--white);
-  }
+}
 
-  .asteroidCardDistanceLine::after {
+.asteroidCardDistanceLine::after {
     right: -1px;
     border-left: 6px solid var(--white);
-  }
+}
 
-  .asteroidCardIcon {
+.asteroidCardIcon {
     flex: 0 0 auto;
     display: block;
-  }
+}
 
 .asteroidCardInfo {
     display: flex;

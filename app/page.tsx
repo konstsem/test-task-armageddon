@@ -1,9 +1,9 @@
-import { AppStoreProvider } from "./store/AppStoreProvider";
 import { AsteroidList } from "./components/AsteroidList";
 import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
-import { getNormalizedList } from "./utils/getNormalizedList";
 import apiNasaService from "./services/apiNasa";
+import { AppStoreProvider } from "./store/AppStoreProvider";
+import { getNormalizedList } from "./utils/getNormalizedList";
 
 export default async function Home() {
     // TODO: catch and handle errors

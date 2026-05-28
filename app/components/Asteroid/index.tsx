@@ -5,10 +5,12 @@ import { ru } from "date-fns/locale";
 import { observer } from "mobx-react-lite";
 import Image from "next/image";
 import Link from "next/link";
+
 import { useAppStore } from "@/app/store/AppStoreProvider";
-import { getFormattedKilometers } from "@/app/utils/getFormattedKilometers";
-import styles from "./styles.module.css";
 import { AsteroidItem } from "@/app/types";
+import { getFormattedKilometers } from "@/app/utils/getFormattedKilometers";
+
+import styles from "./styles.module.css";
 
 const BIG_MIN_DIAMETER = 100;
 const formatDistanceMapper = {
@@ -27,7 +29,9 @@ export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
     const iconWidth = isBig ? 36 : 22;
     const iconHeight = isBig ? 40 : 24;
     const isItemInCart = allIds.includes(itemId);
-    const formattedDate = format(new Date(item.close_approach_date), "d MMM yyyy", { locale: ru }).replace(".", "");
+    const formattedDate = format(new Date(item.close_approach_date), "d MMM yyyy", {
+        locale: ru,
+    }).replace(".", "");
     const getFormattedDistance = (item: AsteroidItem) => {
         return formatDistanceMapper[distanceFormat](item.close_approach_distance[distanceFormat]);
     };
@@ -44,11 +48,18 @@ export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
 
             <div className={styles.asteroidCardBody}>
                 <div className={styles.asteroidCardDistance}>
-                    <span className={styles.asteroidCardDistanceValue}>{getFormattedDistance(item)}</span>
+                    <span className={styles.asteroidCardDistanceValue}>
+                        {getFormattedDistance(item)}
+                    </span>
                     <span className={styles.asteroidCardDistanceLine} aria-hidden="true"></span>
                 </div>
 
-                <Image src="/asteroid.svg" alt="asteroid icon" width={iconWidth} height={iconHeight} />
+                <Image
+                    src="/asteroid.svg"
+                    alt="asteroid icon"
+                    width={iconWidth}
+                    height={iconHeight}
+                />
 
                 <div className={styles.asteroidCardInfo}>
                     <Link className={styles.asteroidCardName} href={item.link} target="_blank">
@@ -61,7 +72,10 @@ export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
             <footer className={styles.asteroidCardFooter}>
                 <button
                     type="button"
-                    className={clsx(styles.baseOrderBtn, isItemInCart ? styles.inCartBtn : styles.toCartBtn)}
+                    className={clsx(
+                        styles.baseOrderBtn,
+                        isItemInCart ? styles.inCartBtn : styles.toCartBtn
+                    )}
                     onClick={handleAddToCart}
                 >
                     {isItemInCart ? "В КОРЗИНЕ" : "ЗАКАЗАТЬ"}
