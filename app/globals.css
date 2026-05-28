@@ -4,10 +4,13 @@
   --white: #FFF;
   --orange: #ff6b00;
   --orange-light: rgb(248 102 0 / 0.15);
-  --btn-color: #F5DED9
+  --btn-color: #F5DED9;
+  --bg-cart: #232526;
 }
 
 body {
+  height: 100%;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Helvetica, Arial, sans-serif;
