@@ -6,16 +6,28 @@ import Link from "next/link";
 import { useAppStore } from "@/app/store/AppStoreProvider";
 import { getFormattedKilometers } from "@/app/utils/getFormattedKilometers";
 import styles from "./styles.module.css";
+import { AsteroidItem } from "@/app/types";
 
 const BIG_MIN_DIAMETER = 100;
-
+const formatDistanceMapper = {
+    kilometers: (value: string) => getFormattedKilometers(value) + " км",
+    lunar: (value: string) => value + " лунных орбит",
+};
 export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
     const store = useAppStore();
-    const item = store.items.byId[itemId];
+    const {
+        items: { byId },
+        cart: { allIds },
+        distanceFormat,
+    } = store;
+    const item = byId[itemId];
     const isBig = item.diameter > BIG_MIN_DIAMETER;
     const iconWidth = isBig ? 36 : 22;
     const iconHeight = isBig ? 40 : 24;
-    const isItemInCart = store.cart.allIds.includes(itemId);
+    const isItemInCart = allIds.includes(itemId);
+    const getFormattedDistance = (item: AsteroidItem) => {
+        return formatDistanceMapper[distanceFormat](item.close_approach_distance[distanceFormat]);
+    };
 
     const handleAddToCart = () => {
         if (!isItemInCart) {
@@ -29,9 +41,7 @@ export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
 
             <div className={styles.asteroidCardBody}>
                 <div className={styles.asteroidCardDistance}>
-                    <span className={styles.asteroidCardDistanceValue}>
-                        {getFormattedKilometers(item.close_approach_distance.kilometers)} км
-                    </span>
+                    <span className={styles.asteroidCardDistanceValue}>{getFormattedDistance(item)}</span>
                     <span className={styles.asteroidCardDistanceLine} aria-hidden="true"></span>
                 </div>
 
