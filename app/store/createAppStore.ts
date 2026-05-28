@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+
 import { AsteroidItem } from "../types";
 
 export type AppState = {
@@ -37,7 +38,8 @@ export const createAppStore = (initialState: AppState) => {
             this.cart = { byId: {}, allIds: [] };
         },
         toggleDistanceFormat() {
-            this.distanceFormat = this.distanceFormat === "kilometers" ? ("lunar" as const) : ("kilometers" as const);
+            this.distanceFormat =
+                this.distanceFormat === "kilometers" ? ("lunar" as const) : ("kilometers" as const);
         },
     });
 };

@@ -1,9 +1,9 @@
 .cartPanel {
     grid-area: cart;
     width: 100%;
-  }
-  
-  .cartCard {
+}
+
+.cartCard {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -12,15 +12,15 @@
     padding: 1.25rem 1.5rem;
     max-width: 150px;
     box-sizing: border-box;
-  }
-  
-  .cartCardTitle {
+}
+
+.cartCardTitle {
     margin: 0 0 0.25rem;
     font-size: 1.25rem;
     font-weight: 700;
-  }
-  
-  .cartCardSubmit {
+}
+
+.cartCardSubmit {
     padding: 0.875rem 1rem;
     border: none;
     border-radius: 1.5rem;
@@ -28,11 +28,11 @@
     color: var(--white);
     font-weight: 700;
     cursor: pointer;
-  }
+}
 
-  @media(max-width: 768px) {
+@media (max-width: 768px) {
     .cartPanel {
-      z-index: 1000;
+        z-index: 1000;
         max-width: 100%;
         position: fixed;
         bottom: 0;
@@ -40,11 +40,11 @@
     }
 
     .cartCard {
-      flex-direction: row;
-      max-width: 100%;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 0;
-      padding: 1rem;
+        flex-direction: row;
+        max-width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0;
+        padding: 1rem;
     }
-  }
+}

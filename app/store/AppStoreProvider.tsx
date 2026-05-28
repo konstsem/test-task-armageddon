@@ -1,7 +1,8 @@
 "use client";
-import { FC, createContext, PropsWithChildren, useContext, useState } from "react";
+import { FC, PropsWithChildren, createContext, useContext, useState } from "react";
+
 import { createAppStore } from "./createAppStore";
-import type { AppStore, AppState } from "./createAppStore";
+import type { AppState, AppStore } from "./createAppStore";
 
 type AppStoreProviderProps = PropsWithChildren<{
     initialState: AppState;

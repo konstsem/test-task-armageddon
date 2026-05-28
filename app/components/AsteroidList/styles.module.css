@@ -1,58 +1,58 @@
 .asteroidsMain {
-  grid-area: main;
-  min-height: 0;        /* обязательно для скролла в grid */
-  overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* старый Edge / IE */
-  padding-top: 8.25rem;
-  padding-right: 0.5rem;   /* место под скроллбар */
+    grid-area: main;
+    min-height: 0; /* обязательно для скролла в grid */
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* старый Edge / IE */
+    padding-top: 8.25rem;
+    padding-right: 0.5rem; /* место под скроллбар */
 }
 
 .asteroidsMain ::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, new Edge */
+    display: none; /* Chrome, Safari, new Edge */
 }
 
 .asteroidsMainHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .asteroidsMainTitle {
-  font-size: 28px;
-  line-height: 36px;
-  font-weight: 400;
-  margin: 0;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 400;
+    margin: 0;
 }
 
 .unitSwitcher {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
-  align-items: center;
-  font-size: 16px;
-  line-height: 24px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .unitSwitcherBtn {
-  color: var(--white);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+    color: var(--white);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
 .unitSwitcherBtn[aria-pressed="true"] {
-  font-weight: 700;
-  cursor: default;
+    font-weight: 700;
+    cursor: default;
 }
 
 .unitSwitcherBtn[aria-pressed="false"] {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer {
-  display: none;
+    display: none;
 }
 
 .asteroidList {
@@ -61,11 +61,11 @@
     margin: 0;
 }
 
-@media(max-width: 768px) {
-  .asteroidsMain {
-    padding-top: 0;
-    position: relative;
-    left: 65px; /* TODO пересмотреть после замены изображения*/
-    padding-bottom: 50px; /* для footer */
-  }
+@media (max-width: 768px) {
+    .asteroidsMain {
+        padding-top: 0;
+        position: relative;
+        left: 65px; /* TODO пересмотреть после замены изображения*/
+        padding-bottom: 50px; /* для footer */
+    }
 }
