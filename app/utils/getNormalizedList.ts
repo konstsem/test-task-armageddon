@@ -34,12 +34,13 @@ export const getNormalizedList = (
             byId[item.id] = {
                 id: item.id,
                 name: item.name,
+                link: item.nasa_jpl_url,
                 close_approach_date,
                 close_approach_distance: {
                     kilometers: distanceInKilometers,
                     lunar: distanceInLunar,
                 },
-                diameter: (estimated_diameter_max + estimated_diameter_min) / 2,
+                diameter: Math.round((estimated_diameter_max + estimated_diameter_min) / 2),
                 is_potentially_hazardous_asteroid,
             };
             allIds.push(item.id);

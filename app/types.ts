@@ -1,6 +1,7 @@
 export interface apiNasaAsteroidDto {
     id: string;
     name: string;
+    nasa_jpl_url: string;
     estimated_diameter: {
         meters: { estimated_diameter_max: number; estimated_diameter_min: number };
     };
@@ -18,6 +19,7 @@ export interface apiNasaAsteroidsByDateDto {
 export type AsteroidItem = {
     id: string;
     name: string;
+    link: string;
     close_approach_date: string;
     close_approach_distance: {
         kilometers: string;
