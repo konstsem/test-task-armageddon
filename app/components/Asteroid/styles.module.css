@@ -1,8 +1,8 @@
 .asteridCard {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding-top: 24px;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
 }
 
 .asteroidCardHeader {
@@ -12,17 +12,17 @@
 }
 
 .asteroidCardBody {
-    height: 40px;
+    height: 2.5rem;
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 0.5rem;
     align-items: center;
 }
 
 .asteroidCardDistance {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
   }
 
   .asteroidCardDistanceValue {
@@ -36,7 +36,7 @@
     width: 100%;
     height: 1px;
     background: var(--white);
-    transform: translateY(-4px);
+    transform: translateY(-0.25rem);
   }
 
   .asteroidCardDistanceLine::before,
@@ -47,8 +47,8 @@
     width: 0;
     height: 0;
     transform: translateY(-50%);
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+    border-top: 0.25rem solid transparent;
+    border-bottom: 0.25rem solid transparent;
   }
 
   .asteroidCardDistanceLine::before {
@@ -88,15 +88,15 @@
 .asteroidCardFooter {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 0.625rem;
     align-items: center;
-    height: 24px;
+    height: 1.5rem;
 }
 
 .asteroidCardDanger {
     display: flex;
     flex-direction: row;
-    gap: 4px;
+    gap: 0.25rem;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
@@ -104,13 +104,13 @@
 
 .baseOrderBtn {
     border: none;
-    border-radius: 16px;
+    border-radius: 1rem;
     cursor: pointer;
     font-size: 11px;
     line-height: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    height: 24px;
+    height: 1.5rem;
     padding-left: 11px;
     padding-right: 11px;
 }

@@ -29,7 +29,6 @@ export const AsteroidList = () => {
                     <AsteroidCard key={id} itemId={id} />
                 ))}
             </ul>
-            <footer className={styles.footer}>© Все права и планета защищены</footer>
         </main>
     );
 };

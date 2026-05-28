@@ -2,9 +2,14 @@
   grid-area: main;
   min-height: 0;        /* обязательно для скролла в grid */
   overflow-y: auto;
-  overscroll-behavior: contain;
-  padding-top: 132px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* старый Edge / IE */
+  padding-top: 8.25rem;
   padding-right: 0.5rem;   /* место под скроллбар */
+}
+
+.asteroidsMain ::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, new Edge */
 }
 
 .asteroidsMainHeader {
@@ -61,13 +66,6 @@
     padding-top: 0;
     position: relative;
     left: 65px; /* TODO пересмотреть после замены изображения*/
-  }
-
-  .footer {
-    display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    padding: 16px;
+    padding-bottom: 50px; /* для footer */
   }
 }

@@ -17,6 +17,7 @@ export default async function Home() {
                 <AsteroidList />
                 <Cart />
             </AppStoreProvider>
+            <footer className="footer">© Все права и планета защищены</footer>
         </div>
     );
 }

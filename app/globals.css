@@ -27,6 +27,10 @@ body {
   box-sizing: border-box;
 }
   
+.footer {
+  display: none;
+}
+
 @media(max-width: 768px) {
   .app {
     height: auto;
@@ -34,14 +38,25 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto auto;
+    grid-template-rows: auto 1fr auto auto auto;
     grid-template-areas: 
       "header"
       "main"
       "cart"
-      "earthLogo";
+      "earthLogo"
+      "footer";
     column-gap: 0;
     row-gap: 1rem;
+  }
+  .footer {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    grid-area: footer;
+    padding: 1rem;
+    background: var(--background);
   }
 }
 
