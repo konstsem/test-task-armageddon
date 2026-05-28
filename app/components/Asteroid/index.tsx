@@ -10,14 +10,18 @@ import styles from "./styles.module.css";
 const BIG_MIN_DIAMETER = 100;
 
 export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
-    const {
-        items: { byId },
-    } = useAppStore();
-    const item = byId[itemId];
+    const store = useAppStore();
+    const item = store.items.byId[itemId];
     const isBig = item.diameter > BIG_MIN_DIAMETER;
     const iconWidth = isBig ? 36 : 22;
     const iconHeight = isBig ? 40 : 24;
-    const isItemInCart = false;
+    const isItemInCart = store.cart.allIds.includes(itemId);
+
+    const handleAddToCart = () => {
+        if (!isItemInCart) {
+            store.addToCart({ id: itemId, name: item.name });
+        }
+    };
 
     return (
         <li className={styles.asteridCard}>
@@ -45,6 +49,7 @@ export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
                 <button
                     type="button"
                     className={clsx(styles.baseOrderBtn, isItemInCart ? styles.inCartBtn : styles.toCartBtn)}
+                    onClick={handleAddToCart}
                 >
                     {isItemInCart ? "В КОРЗИНЕ" : "ЗАКАЗАТЬ"}
                 </button>
