@@ -17,11 +17,13 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "prettier": "^3.8.3",
     "typescript": "^5"
   }
 }
