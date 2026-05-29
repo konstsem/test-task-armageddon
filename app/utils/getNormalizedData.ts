@@ -1,6 +1,6 @@
 import { AsteroidItem, apiNasaAsteroidDto, apiNasaAsteroidsByDateDto } from "../types";
 
-export const getNormalizedList = (
+export const getNormalizedData = (
     elementsByDate: apiNasaAsteroidsByDateDto
 ): { byId: Record<string, AsteroidItem>; allIds: string[] } => {
     if (!elementsByDate) {
