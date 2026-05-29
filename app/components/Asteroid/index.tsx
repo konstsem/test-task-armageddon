@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useAppStore } from "@/app/store/AppStoreProvider";
 import { AsteroidItem } from "@/app/types";
 import { getFormattedKilometers } from "@/app/utils/getFormattedKilometers";
+import asteroidImage from "@/public/asteroid.svg";
 
 import styles from "./styles.module.css";
 
@@ -55,7 +56,7 @@ export const AsteroidCard = observer(({ itemId }: { itemId: string }) => {
                 </div>
 
                 <Image
-                    src="/asteroid.svg"
+                    src={asteroidImage}
                     alt="asteroid icon"
                     width={iconWidth}
                     height={iconHeight}

@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import earthImage from "@/public/earth.jpg";
+
 import styles from "./styles.module.css";
 
 export const Header = () => {
@@ -15,7 +17,7 @@ export const Header = () => {
 
             <Image
                 className={styles.earthPanelImage}
-                src="/earth.jpg"
+                src={earthImage}
                 alt=""
                 loading="eager"
                 width={367}
